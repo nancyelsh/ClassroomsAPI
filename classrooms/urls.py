@@ -18,8 +18,12 @@ urlpatterns = [
     path('classrooms/create', views.classroom_create, name='classroom-create'),
     path('classrooms/<int:classroom_id>/update/', views.classroom_update, name='classroom-update'),
     path('classrooms/<int:classroom_id>/delete/', views.classroom_delete, name='classroom-delete'),
+    
     path('list/', views2.ClassListView.as_view(), name='list'),
     path('detail/<int:classroom_id>/', views2.ClassDetailView.as_view(), name='detail'),
+    path('create/', views2.ClassCreateView.as_view(), name='create'),
+    path('<int:classroom_id>/update/', views2.ClassUpdateView.as_view(), name='update'),
+    path('<int:classroom_id>/delete/', views2.ClassDeleteView.as_view(), name='delete'),
     path('login/', TokenObtainPairView.as_view(), name='login')
 ]
 
